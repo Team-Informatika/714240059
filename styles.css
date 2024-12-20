@@ -117,6 +117,24 @@
   .social-media a:hover {
     color: #4CAF50;
   }
+
+  /* QR Code Section */
+.qr-code {
+    margin-top: 20px;
+  }
+  
+  .qr-code h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .qr-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+  }
   
   /* Responsiveness */
   @media (max-width: 480px) {
