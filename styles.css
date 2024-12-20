@@ -1,0 +1,157 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Kartu Nama Styling */
+  .card {
+    background-color: #fff;
+    width: 320px;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Profil Styling */
+  .profile {
+    margin-bottom: 20px;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+  }
+  
+  /* Info Styling */
+  .info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .job-title {
+    font-size: 16px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .contact-info {
+    font-size: 14px;
+    color: #4CAF50;
+    margin: 5px 0;
+  }
+  
+  /* About Me Section */
+  .about-me {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .about-me h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .about-me p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Skills Section */
+  .skills {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .skills h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .skills ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills li {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .skills i {
+    color: #4CAF50;
+    margin-right: 8px;
+  }
+  
+  /* Social Media Icons */
+  .social-media {
+    margin-top: 20px;
+  }
+  
+  .social-media a {
+    font-size: 20px;
+    color: #333;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-media a:hover {
+    color: #4CAF50;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 480px) {
+    .card {
+      width: 280px;
+      padding: 15px;
+    }
+  
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .info h1 {
+      font-size: 22px;
+    }
+  
+    .job-title {
+      font-size: 14px;
+    }
+  
+    .contact-info {
+      font-size: 13px;
+    }
+  
+    .about-me h3, .skills h3 {
+      font-size: 16px;
+    }
+  
+    .skills li, .about-me p {
+      font-size: 13px;
+    }
+  
+    .social-media a {
+      font-size: 18px;
+    }
+  }
+  
