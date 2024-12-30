@@ -10,7 +10,7 @@ onclick("whatsapp",mywa);
 function mywa() {
     window.open('https://whatsapp.com/6287723806103', 'blank');
 }
-onclick("github",myig);
+onclick("instagram",myig);
 function myig() {
     window.open('https://instagram.com/not_moch', 'blank');
 }
