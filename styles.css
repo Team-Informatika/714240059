@@ -101,22 +101,53 @@
     margin-right: 8px;
   }
   
-  /* Social Media Icons */
-  .social-icons {
-    margin-top: 20px;
+/* Styling untuk div container */
+#so {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek animasi untuk ikon sosial */
+#so i {
+  font-size: 40px;
+  color: #ffffff;
+  cursor: pointer;
+  animation: blink 2s infinite ease-in-out;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover efek */
+#so i:hover {
+  transform: scale(1.2);
+  color: #f4e04d;
+  text-shadow: 0 0 10px #f4e04d, 0 0 20px #f4e04d;
+}
+
+/* Animasi kelap-kelip */
+@keyframes blink {
+  0%, 100% {
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
   }
-  
-  .social-icons a {
-    font-size: 20px;
-    color: #333;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s;
+  50% {
+    text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
   }
-  
-  .social-icons a:hover {
-    color: #4CAF50;
-  }
+}
+
+/* Judul styling */
+#tex {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 
   /* QR Code Section */
 .qr-code {
