@@ -1,4 +1,4 @@
-import {renderHTML} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js";
+import {renderHTML,onclick,setInner} from "<script src="https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js";
 
 renderHTML('content', 'cok.html');
 
