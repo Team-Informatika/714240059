@@ -1,6 +1,6 @@
 import {renderHTML,onClick,setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.8/element.js";
 
-renderHTML('content', 'ck.html');
+renderHTML('content', 'cok.html');
 
 onClick("github",myGithub);
 function myGithub() {
