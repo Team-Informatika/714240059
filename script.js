@@ -9,7 +9,7 @@ renderHTML('qr', 'qr.html')
 function muncul() {
   console.log(getHash());
   const hashpath = getHash();
-  if (hashpath === 'cok') {
+  if (hashpath === 'content') {
     console.log("kedetek");
     renderHTML('cardbenar', "cok.html", renderDataKartu);
   }
