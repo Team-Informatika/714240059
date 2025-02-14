@@ -1,18 +1,52 @@
-import {renderHTML,onClick,setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.1.8/element.js";
+import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/api.js"
+import { renderHTML, setInner } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js"
+import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/url.js"
 
-renderHTML('content', 'cok.html');
+onHashChange(muncul);
 
-onClick("github",myGithub);
-function myGithub() {
-    window.open('https://github.com/Ameringkseh', 'blank');
-}
-onClick("whatsapp",mywhatsapp);
-function mywhatsapp() {
-    window.open('https://whatsapp.com/6287723806103', 'blank');
-}
-onClick("instagram",myinstagram);
-function myinstagram() {
-    window.open('https://instagram.com/not_moch', 'blank');
-}
+renderHTML('qr', 'qr.html')
 
-setInner("tex", "kontak saya:")
+function muncul() {
+  console.log(getHash());
+  const hashpath = getHash();
+  if (hashpath === 'content') {
+    console.log("kedetek");
+    renderHTML('cardbenar', "content.html", renderDataKartu);
+  }
+}
+function renderDataKartu() {
+  getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
+}
+// renderHTML('cardbenar', 'content.html')
+
+function responseFunction(response) {
+  // renderHTML('cardbenar', 'content.html');
+  console.log('HTTP Status:', response.status);
+  console.log('Response Data:', response.data);
+  setInner('nama', response.data.card.details.name);
+  setInner('occupation', response.data.card.details.occupation)
+  const avatarSrc = response.data.card.avatar.src;
+  const avatarHTML = `<img src="${avatarSrc}" alt="Avatar">`;
+  setInner('avatar', avatarHTML);
+  setInner('harga', response.data.card.details.rate_hour.price);
+  setInner('rate', response.data.card.details.rate_hour.rate);
+  setInner('isi', response.data.card.details.skills.deskripsi);
+  const container = document.getElementById('item-list')
+  let dataitem = response.data.card.details.about;
+  dataitem.forEach((item) => {
+    const itemContainer = document.createElement("div");
+    itemContainer.className = "item";
+    const isiValue = document.createElement("span");
+    isiValue.className = "value";
+    isiValue.textContent = item.value;
+    const isiLabel = document.createElement("span");
+    isiLabel.className = "label";
+    isiLabel.textContent = item.label;
+    console.log(itemContainer);
+    console.log(isiValue);
+    console.log(isiLabel);
+    itemContainer.appendChild(isiValue);
+    itemContainer.appendChild(isiLabel);
+    container.appendChild(itemContainer);
+  });
+}

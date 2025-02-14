@@ -1,206 +1,156 @@
-/* Resetting some default styles */
 * {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: white;
+
+  --primary: #ff1ead;
+  --secondary: #1effc3;
+  
+  --card-size: 300px;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--background);
+  font-family: 'Source Code Pro', monospace;
+  
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card { 
+  width: calc(var(--card-size) * 1.586);
+  height: var(--card-size);
+  
+  border-radius: 0.75rem;
+  box-shadow:  0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  
+  background: black;
+  
+  display: grid;
+  grid-template-columns: 40% auto;
+  color: white;
+  
+  align-items: center;
+  
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  &:hover {
+     transform: scale(1.1);
+     box-shadow:  0 32px 80px 14px rgba(0,0,0,0.36), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.card-details {
+  padding: 1rem;
+}
+
+.name {
+  font-size: 1.25rem;
+}
+
+.occupation {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.card-avatar {
+  display: grid;
+  place-items: center;
+  margin-bottom: 5.5rem;
+}
+
+.card-avatar img {
+  width: 80%;  /* Sesuaikan persentasenya sesuai kebutuhan */
+  max-width: 100px; /* Batas maksimal agar tidak terlalu besar */
+  height: auto; /* Menjaga aspek rasio gambar */
+  border-radius: 50%; /* Opsional: Membuat gambar menjadi bulat */
+}
+
+.card-about {
+  margin-top: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  
+  .value {
+     font-size: 1rem;
   }
   
-  /* Body Styling */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  .label {
+     margin-top: 0.15rem;
+     font-size: 0.75rem;
+     font-weight: 600;
+     color: var(--primary);
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
+  
+  .label {
+     font-size: 1rem;
+     font-weight: 600;
+     color: var(--primary);
   }
   
-  /* Kartu Nama Styling */
-  .card {
-    background-color: #fff;
-    width: 320px;
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+  .value {
+     margin-top: 0.15rem;
+     font-size: 0.75rem;
+     line-height: 1.25rem;
   }
-  
-  /* Profil Styling */
-  .profile {
-    margin-bottom: 20px;
-  }
-  
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4CAF50;
-  }
-  
-  /* Info Styling */
-  .info h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .job-title {
-    font-size: 16px;
-    color: #777;
-    margin: 10px 0;
-  }
-  
-  .contact-info {
-    font-size: 14px;
-    color: #4CAF50;
-    margin: 5px 0;
-  }
-  
-  /* About Me Section */
-  .about-me {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .about-me h3,h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .about-me p {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  /* Skills Section */
-  .skills {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .skills h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .skills ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .skills li {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  .skills i {
-    color: #4CAF50;
-    margin-right: 8px;
-  }
-  
-/* Styling untuk div container */
-#so {
+}
+
+.rate-hour {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.rate-hour .value {
+  font-size: 1.5rem; /* Ukuran angka */
+  font-weight: bold;
+  color: var(--secondary); /* Menggunakan warna tema */
+}
+
+.rate-hour .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary); /* Warna label */
+}
+
+.qr-box {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc; /* Border untuk box */
+  border-radius: 8px; /* Sudut melengkung pada box */
+  background: #111; /* Latar belakang box */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: linear-gradient(45deg, #4CAF50, #fad0c4);
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-height: 150px;
 }
 
-/* Efek animasi untuk ikon sosial */
-#so i {
-  font-size: 40px;
-  color: #ffffff;
-  cursor: pointer;
-  animation: blink 2s infinite ease-in-out;
-  transition: transform 0.3s, color 0.3s;
+.qr-code img {
+  width: 100px;  /* Sesuaikan ukuran gambar QR */
+  height: 100px; /* Sesuaikan ukuran gambar QR */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 4px; /* Opsional: memberikan sudut melengkung pada gambar */
 }
 
-/* Hover efek */
-#so i:hover {
-  transform: scale(1.2);
-  color: #f4e04d;
-  text-shadow: 0 0 10px #f4e04d, 0 0 20px #f4e04d;
-}
-
-/* Animasi kelap-kelip */
-@keyframes blink {
-  0%, 100% {
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
-  }
-  50% {
-    text-shadow: 0 0 15px #4CAF50, 0 0 30px #4CAF50;
-  }
-}
-
-/* Judul styling */
-#tex {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-
-  /* QR Code Section */
-.qr-code {
-    margin-top: 20px;
-  }
-  
-  .qr-code h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .qr-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 480px) {
-    .card {
-      width: 280px;
-      padding: 15px;
-    }
-  
-    .profile-img {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .info h1 {
-      font-size: 22px;
-    }
-  
-    .job-title {
-      font-size: 14px;
-    }
-  
-    .contact-info {
-      font-size: 13px;
-    }
-  
-    .about-me h3, .skills h3 {
-      font-size: 16px;
-    }
-  
-    .skills li, .about-me p {
-      font-size: 13px;
-    }
-  
-    .social-media a {
-      font-size: 18px;
-    }
-  }
-  
