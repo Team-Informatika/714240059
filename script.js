@@ -11,11 +11,11 @@ function muncul() {
   const hashpath = getHash();
   if (hashpath === 'content') {
     console.log("kedetek");
-    renderHTML('cardbenar', "content.html", renderDataKartu);
+    renderHTML('cardbenar', "cok.html", renderDataKartu);
   }
 }
 function renderDataKartu() {
-  getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
+  getJSON("https://t.if.co.id/json/rafli.json", null, null, responseFunction);
 }
 // renderHTML('cardbenar', 'content.html')
 
