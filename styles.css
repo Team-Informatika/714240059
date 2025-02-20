@@ -26,7 +26,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 10px 0 rgba(0, 225, 255, 0.836);
+  box-shadow: 0 10px 0 #25ff66f5;
   transform: translateY(-5px);
 }
 
