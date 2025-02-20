@@ -61,3 +61,4 @@ function responseFunction(isi) {
         linkElement.appendChild(iconElement);
         socialContainer.appendChild(linkElement);
     });
+}
