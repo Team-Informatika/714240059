@@ -61,4 +61,12 @@ function responseFunction(isi) {
         linkElement.appendChild(iconElement);
         socialContainer.appendChild(linkElement);
     });
+
+        // Tambahkan elemen ke dalam card-item
+        dataContainer.appendChild(avatar);
+        dataContainer.appendChild(name);
+        dataContainer.appendChild(ug);
+        dataContainer.appendChild(skill);
+        dataContainer.appendChild(rate);
+        dataContainer.appendChild(socialContainer);
 }
