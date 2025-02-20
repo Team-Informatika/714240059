@@ -23,7 +23,7 @@ function responseFunction(isi) {
     dataContainer.innerHTML = ""; // Hapus isi lama sebelum menambahkan data baru
 
     const avatar = document.createElement("img");
-    avatar.src = isi.data.Poto;
+    avatar.src = isi.data.Foto;
     avatar.alt = "Avatar";
     avatar.id = "avatar";
 
